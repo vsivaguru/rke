@@ -37,6 +37,21 @@ vim /home/manager/.ssh/authorized_keys
 #faire un test si on arrive à se connecter sur le serveur sans mot de passe :
 Ssh manager@ip du serveur
 
+#creer un fichier yml
+vim cluster_11-13.yml
+{{detail est dans github-siva}}
+chmod +x cluster_11-13.yml
+
+#initialiser le cluster kubernetes
+rke up --config cluster_11-13.yml
+
+dès que provisionnement de cluster terminé, dans le même répertoire il y aura un fichier "kube_config_cluster_11-13.yml",
+-ceci nous permetra d'interagir sur le cluster.
+#renommer kube_config_cluster_11-13.yml et envoyer à ~/.kube/
+mv kube_config_cluster_11-13.yml config
+mkdir ~/.kube
+cp config ~/.kube/
+
 
 
 
