@@ -1,0 +1,27 @@
+Ce document decris comment monter un cluster kubernetes via rke
+
+#Récupération des binaires pour manipulation du cluster
+Récupération du binaire de RKE : https://github.com/rancher/rke/releases/
+Récupération du binaire de Kubernetes : https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
+Récupération du binaire de Helm : https://github.com/helm/helm/releases/latest
+
+
+#Créer un répertoire du binaire kub et mettre dans la PATH de votre machine.
+•	Créer un répertoire sur mon pc "rke" sur mon poste
+•	Déposer les binaires dans ce répertoire « rke » 
+•	Renommer les binaires en kubectl et rke et helm 
+chmod +x ./kubectl
+chmod +x ./rke
+chmod +x ./helm
+
+envoyer les sur /usr/local/bin/
+
+#Test
+kubectl version --short
+rke version
+helm version --short
+
+
+
+
+
