@@ -15,12 +15,27 @@ chmod +x ./rke
 chmod +x ./helm
 
 envoyer les sur /usr/local/bin/
+ls -la /usr/local/bin/
 
 #Test
 kubectl version --short
 rke version
 helm version --short
 
+
+#Generer la clé rsa si la clé n’existe pas sur le pc ou serveur de client#
+ssh-keygen -t rsa -b 4096
+
+#Faire manullement copier coller la clé rsa.pub
+cat ~/.ssh/id_rsa.pub
+
+#sur le serveur
+vim /home/manager/.ssh/authorized_keys
+
+{{Ex: ssh-copy-id DISTANT-USER@SERVER_HOST}}
+
+#faire un test si on arrive à se connecter sur le serveur sans mot de passe :
+Ssh manager@ip du serveur
 
 
 
