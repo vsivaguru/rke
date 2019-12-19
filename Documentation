@@ -49,6 +49,7 @@ dès que provisionnement de cluster terminé, dans le même répertoire il y aur
 -ceci nous permetra d'interagir sur le cluster.
 #renommer kube_config_cluster_11-13.yml et envoyer à ~/.kube/
 mv kube_config_cluster_11-13.yml config
+chmod +x ./config
 mkdir ~/.kube
 cp config ~/.kube/
 
