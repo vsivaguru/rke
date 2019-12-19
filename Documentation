@@ -52,6 +52,10 @@ mv kube_config_cluster_11-13.yml config
 mkdir ~/.kube
 cp config ~/.kube/
 
+#Vérification
+kubectl cluster-info
+kubectl get nodes
+
 
 
 
