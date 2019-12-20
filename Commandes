@@ -1,0 +1,11 @@
+#Install
+rke up --config ***.yml
+rke remove --config ***.yml
+
+
+
+
+#upgrade
+vérifier la compatilité de version avant de upgrader:
+rke config --list-version --all
+
