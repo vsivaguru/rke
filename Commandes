@@ -9,3 +9,21 @@ rke remove --config ***.yml
 vérifier la compatilité de version avant de upgrader:
 rke config --list-version --all
 
+
+
+#Clean serveur en cas de reinstall cluster kub
+docker rm -fv  $(docker ps -a -q)
+docker volume rm -f $(docker volume ls)
+
+sudo reboot -h now
+
+rm -rf /run/secrets/kubernetes.io
+rm -rf /var/lib/etcd
+rm -rf /var/lib/kubelet
+rm -rf /var/lib/rancher
+rm -rf /etc/kubernetes
+rm -rf /opt/rke
+docker volume rm -f $(docker volume ls)
+
+sudo reboot -h now
+
