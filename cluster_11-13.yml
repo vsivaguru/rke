@@ -24,3 +24,28 @@ ingress:
     provider: nginx
     node_selector:
       app: ingress
+
+--------------------------------------------------------------
+services:
+  kube-api:
+    extra_args:
+      feature-gates: "TTLAfterFinished=true"
+  kube-controller:
+    extra_args:
+      feature-gates: "TTLAfterFinished=true"
+      
+      
+job.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: helloworld
+spec:
+  ttlSecondsAfterFinished: 20
+  template:
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ["echo", "Hello Kubernetes!!!"]
+      restartPolicy: Never
