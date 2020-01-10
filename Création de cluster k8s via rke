@@ -57,6 +57,14 @@ cp config ~/.kube/
 kubectl cluster-info
 kubectl get nodes
 
+-------------------------------------------------
+# download the binary (adapt os and arch as needed)
+$ curl -fSL -o "/usr/local/bin/tk" "https://github.com/sh0rez/tanka/releases/download/v0.6.1/tk-linux-amd64"
 
+# make it executable
+$ chmod a+x "/usr/local/bin/tk"
+
+# have fun :)
+$ tk --help
 
 
