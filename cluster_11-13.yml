@@ -25,7 +25,6 @@ ingress:
     node_selector:
       app: ingress
 
---------------------------------------------------------------
 services:
   kube-api:
     extra_args:
@@ -33,19 +32,42 @@ services:
   kube-controller:
     extra_args:
       feature-gates: "TTLAfterFinished=true"
+--------------------------------------------------------------
       
-      
-job.yaml
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: helloworld
-spec:
-  ttlSecondsAfterFinished: 20
-  template:
-    spec:
-      containers:
-      - name: busybox
-        image: busybox
-        command: ["echo", "Hello Kubernetes!!!"]
-      restartPolicy: Never
+cluster.yml file:
+
+nodes:
+  - address: 10.10.10.1
+    user: myuser
+    role: [controlplane,worker,etcd]
+  - address: 10.10.10.2
+    user: myuser
+    role: [worker]
+  - address: 10.10.10.3
+    user: myuser
+    role: [controlplane,worker,etcd]
+  - address: 10.10.10.4
+    user: myuser
+    role: [controlplane,worker,etcd]
+
+services:
+  etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+  kube-api:
+    extra_args:
+      feature-gates: "VolumeSubpathEnvExpansion=true"
+  kubelet:
+    extra_args:
+      feature-gates: "VolumeSubpathEnvExpansion=true"
+  kube-controller:
+    extra_args:
+      feature-gates: "VolumeSubpathEnvExpansion=true"
+  scheduler:
+    extra_args:
+      feature-gates: "VolumeSubpathEnvExpansion=true"
+  kubeproxy:
+    extra_args:
+      feature-gates: "VolumeSubpathEnvExpansion=true"
+prefix_path: /home1/work/rke
