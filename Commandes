@@ -2,7 +2,9 @@
 rke up --config ***.yml
 rke remove --config ***.yml
 
-
+#add/remove node: https://rancher.com/docs/rke/latest/en/managing-clusters/
+#par defaut il prends cluster.yml
+rke up --update-only 
 
 
 #upgrade
