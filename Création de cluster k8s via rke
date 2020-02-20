@@ -19,7 +19,7 @@ ls -la /usr/local/bin/
 
 #Test
 kubectl version --short
-rke version
+rke -v
 helm version --short
 
 
