@@ -1,0 +1,11 @@
+#vérifier la compatibilité de version rke cluster
+rke config --list-version --all
+
+
+#création et Upgrade commande 
+rke up --config cluster.yml
+
+
+#juste pour la modification de fichier yml
+rke up --update-only
+
