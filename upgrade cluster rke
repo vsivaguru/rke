@@ -1,3 +1,9 @@
+#monter la version de rancher
+docker run --name rancher -d -p 80:80 -p 443:443 -v /srv/rancher rancher/rancher:v2.3.3
+
+#import le cluster sur la nouvelle version rancher
+
+
 #vérifier la compatibilité de version rke cluster
 rke config --list-version --all
 
