@@ -5,6 +5,9 @@ Récupération du binaire de RKE : https://github.com/rancher/rke/releases/
 Récupération du binaire de Kubernetes : https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
 Récupération du binaire de Helm : https://github.com/helm/helm/releases/latest
 
+  wget https://get.helm.sh/helm-v3.1.1-linux-amd64.tar.gz
+  gzip -d helm-v3.1.1-linux-amd64.tar.gz
+  tar -xvf helm-v3.1.1-linux-amd64.tar
 
 #Créer un répertoire du binaire kub et mettre dans la PATH de votre machine.
 •	Créer un répertoire sur mon pc "rke" sur mon poste
