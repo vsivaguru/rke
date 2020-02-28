@@ -1,3 +1,11 @@
+Sites importants:
+#Gitlab-runner 
+https://gitlab.com/gitlab-org/charts/gitlab-runner/-/blob/master/values.yaml
+#rke version
+https://github.com/rancher/rke/releases?after=v0.3.1-rc2
+
+
+
 Ce document decris comment monter un cluster kubernetes via rke
 
 #Récupération des binaires pour manipulation du cluster
