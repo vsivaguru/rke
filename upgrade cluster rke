@@ -1,3 +1,24 @@
+#je choisi la version rke
+https://github.com/rancher/rke/releases?after=v1.1.0-rc4
+v1.16.3-rancher1-1
+
+1. Récupération du binaire de RKE : 
+#copier l'adresse du lien et télécharger le binaire rke depuis le poste client
+wget https://github.com/rancher/rke/releases/download/v1.0.0/rke_linux-amd64
+mv rke_linux-amd64 rke
+chmod +x ./rke
+cp rke /usr/local/bin/
+rke version
+
+2. Récupération du binaire de Kubernetes : https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
+chmod +x ./kubectl
+cp kubectl /usr/local/bin/kubectl
+kubectl version --short
+
+3. Récupération du binaire de Helm : https://github.com/helm/helm/releases/latest
+wget https://get.helm.sh/helm-v3.1.1-linux-arm64.tar.gz
+
+
 #monter la version de rancher
 docker run --name rancher -d -p 80:80 -p 443:443 -v /srv/rancher rancher/rancher:v2.3.3
 
