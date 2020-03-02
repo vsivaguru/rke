@@ -22,6 +22,7 @@ cd helm...
 cp helm /usr/local/bin/
 helm version --short
 
+chown -R manager:manager /home/manager/
 
 #monter la version de rancher
 docker run --name rancher -d -p 80:80 -p 443:443 -v /srv/rancher rancher/rancher:v2.3.3
