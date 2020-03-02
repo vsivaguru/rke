@@ -42,6 +42,8 @@ cat ~/.ssh/id_rsa.pub
 
 #sur le serveur
 vim /home/manager/.ssh/authorized_keys
+#error rencontrer pour l'accès ssh
+chown -R manager:manager /home/manager/
 
 {{Ex: ssh-copy-id DISTANT-USER@SERVER_HOST}}
 
