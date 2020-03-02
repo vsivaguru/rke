@@ -2,7 +2,7 @@
 https://github.com/rancher/rke/releases?after=v1.1.0-rc4
 v1.16.3-rancher1-1
 
-1. Récupération du binaire de RKE : 
+1. Récupération du binaire de RKE : Linux amd64
 #copier l'adresse du lien et télécharger le binaire rke depuis le poste client
 wget https://github.com/rancher/rke/releases/download/v1.0.0/rke_linux-amd64
 mv rke_linux-amd64 rke
@@ -16,7 +16,11 @@ cp kubectl /usr/local/bin/kubectl
 kubectl version --short
 
 3. Récupération du binaire de Helm : https://github.com/helm/helm/releases/latest
-wget https://get.helm.sh/helm-v3.1.1-linux-arm64.tar.gz
+wget https://get.helm.sh/helm-v3.1.1-linux-amd64.tar.gz
+tar -xvf helm...
+cd helm...
+cp helm /usr/local/bin/
+helm version --short
 
 
 #monter la version de rancher
